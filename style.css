@@ -1,0 +1,155 @@
+ :root {
+            --primary-blue: #4da8da;
+            --success-green: #4cd137;
+            --error-red: #e84118;
+            --bg-dark: #12121e;
+            --card-bg: #1e1e2f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle, #17173d 0%, #11111d 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .game-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 380px;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.2s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation for wrong guess */
+        .shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        /* Animation for win */
+        .win-glow {
+            animation: glow 1.5s infinite alternate;
+            border: 2px solid var(--success-green);
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px var(--success-green), 0 0 20px var(--success-green); }
+            to { box-shadow: 0 0 20px var(--success-green), 0 0 40px var(--success-green); }
+        }
+
+        h1 {
+            margin-top: 0;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stats {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #attempts-left {
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 18px;
+            width: 60%;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            background-color: #12121e;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(77, 168, 218, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: var(--primary-blue);
+            color: #12121e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: #3b8bb5;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background-color: #555;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        #feedback-msg {
+            font-size: 1.1em;
+            font-weight: bold;
+            min-height: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        /* Feedback Dynamic Colors */
+        .correct { color: var(--success-green); font-size: 1.3em; }
+        .wrong { color: var(--error-red); }
+        .freezing { color: #0097e6; }
+        .cold { color: #48dbfb; }
+        .warm { color: #fbc531; }
+        .hot { color: #e1b12c; }
+        .boiling { color: #e84118; text-shadow: 0 0 5px rgba(232, 65, 24, 0.5); }
+
+        #restart-btn {
+            background-color: var(--success-green);
+            display: none;
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+        }
