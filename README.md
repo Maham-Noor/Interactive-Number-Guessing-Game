@@ -61,7 +61,6 @@ git clone https://github.com/Maham-Noor/Interactive-Number-Guessing-Game.git
 Then open index.html in your browser.
 
 No installation required.
-
 ```
 ---
 
