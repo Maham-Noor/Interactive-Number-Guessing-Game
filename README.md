@@ -45,10 +45,11 @@ This project focuses on **user experience and micro-interactions**, not just bas
 
 ## 📂 Project Structure
 
-├── index.html
-├── style.css
-└── script.js
-
+```
+├─ index.html            
+├─ style.css      
+├─ script.js
+```
 ---
 
 ## 🎮 How to Run
@@ -61,6 +62,7 @@ Then open index.html in your browser.
 
 No installation required.
 
+```
 ---
 
 ## 💡 What This Project Demonstrates
